@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EquipItem" format=3 uid="uid://dpe8qy2pw0lki"]
+
+[ext_resource type="Script" uid="uid://cacfp03wmcag2" path="res://components/InventoryComponent/items/equipment/equip_item.gd" id="1_5n6hb"]
+[ext_resource type="Texture2D" uid="uid://fcn1047maujy" path="res://Sprites/neuroshit/Neuro_2026-06-15_04-57-09.jpg" id="2_07ebb"]
+[ext_resource type="Script" uid="uid://c74f3p37nc0nm" path="res://scripts/StatsStruct.gd" id="2_fud70"]
+
+[sub_resource type="Resource" id="Resource_pcbep"]
+script = ExtResource("2_fud70")
+health = 120.0
+armor = 80.0
+fire_resist = 5.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[resource]
+script = ExtResource("1_5n6hb")
+stats = SubResource("Resource_pcbep")
+equip_type = 1
+texture2D = ExtResource("2_07ebb")
+name = "Imperial chest"
+metadata/_custom_type_script = "uid://cacfp03wmcag2"

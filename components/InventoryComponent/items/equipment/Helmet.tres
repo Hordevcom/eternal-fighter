@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EquipItem" format=3 uid="uid://cb5ix5pu5t58n"]
+
+[ext_resource type="Script" uid="uid://cacfp03wmcag2" path="res://components/InventoryComponent/items/equipment/equip_item.gd" id="1_vgkhj"]
+[ext_resource type="Texture2D" uid="uid://vrlwvcw3bn4m" path="res://Sprites/neuroshit/Gemini_Generated_Image_qv8msvqv8msvqv8m.png" id="2_6gqks"]
+[ext_resource type="Script" uid="uid://c74f3p37nc0nm" path="res://scripts/StatsStruct.gd" id="2_yvtq2"]
+
+[sub_resource type="Resource" id="Resource_yvtq2"]
+script = ExtResource("2_yvtq2")
+armor = 23.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[resource]
+script = ExtResource("1_vgkhj")
+stats = SubResource("Resource_yvtq2")
+texture2D = ExtResource("2_6gqks")
+name = "Helmet of gods"
+description = "it's just a helmet broou"
+metadata/_custom_type_script = "uid://cacfp03wmcag2"

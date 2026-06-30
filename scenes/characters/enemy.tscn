@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://1w2d5xqvbylk"]
+
+[ext_resource type="PackedScene" uid="uid://b6ewwo55l752h" path="res://scenes/characters/soldier.tscn" id="1_7jb55"]
+[ext_resource type="Script" uid="uid://p83v6rpeji26" path="res://scenes/characters/enemy.gd" id="2_f2e6v"]
+[ext_resource type="Texture2D" uid="uid://b8ja3lj8spnbo" path="res://Sprites/ork/Orc-Walk.png" id="2_fulqv"]
+[ext_resource type="Texture2D" uid="uid://cj0mkr141o2i1" path="res://Sprites/ork/Orc-Attack01.png" id="3_gpyvg"]
+[ext_resource type="Script" uid="uid://pydnvdk6d6mo" path="res://components/InventoryComponent/items/item.gd" id="4_f0ik5"]
+[ext_resource type="Texture2D" uid="uid://b3ibpl7nq653w" path="res://Sprites/ork/Orc-Death.png" id="4_tjfok"]
+[ext_resource type="Script" uid="uid://cacfp03wmcag2" path="res://components/InventoryComponent/items/equipment/equip_item.gd" id="5_rc7n0"]
+[ext_resource type="Script" uid="uid://c74f3p37nc0nm" path="res://scripts/StatsStruct.gd" id="6_gpyvg"]
+[ext_resource type="Texture2D" uid="uid://fcn1047maujy" path="res://Sprites/neuroshit/Neuro_2026-06-15_04-57-09.jpg" id="7_tjfok"]
+[ext_resource type="Texture2D" uid="uid://csj2670yg8yxo" path="res://Sprites/neuroshit/Neuro_2026-06-15_04-57-10.jpg" id="8_ovt1e"]
+[ext_resource type="Texture2D" uid="uid://dc1uyft8jvdhn" path="res://Sprites/icon.png" id="9_hvulg"]
+[ext_resource type="Script" uid="uid://dyd81fr3sx1ah" path="res://components/AI component/ai_enemy_component.gd" id="10_rc7n0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjfok"]
+atlas = ExtResource("3_gpyvg")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovt1e"]
+atlas = ExtResource("3_gpyvg")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvulg"]
+atlas = ExtResource("3_gpyvg")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj4uo"]
+atlas = ExtResource("3_gpyvg")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtiis"]
+atlas = ExtResource("3_gpyvg")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_174rk"]
+atlas = ExtResource("3_gpyvg")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ktny"]
+atlas = ExtResource("4_tjfok")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rji51"]
+atlas = ExtResource("4_tjfok")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bjuq"]
+atlas = ExtResource("4_tjfok")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d55bs"]
+atlas = ExtResource("4_tjfok")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2e6v"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21x0f"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgk6k"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k4es"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5khh"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ag5d"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0ik5"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc7n0"]
+atlas = ExtResource("2_fulqv")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpyvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjfok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovt1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvulg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj4uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtiis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_174rk")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ktny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rji51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bjuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d55bs")
+}],
+"loop": 1,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2e6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21x0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgk6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k4es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5khh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ag5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0ik5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc7n0")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="Resource" id="Resource_livhu"]
+script = ExtResource("6_gpyvg")
+armor = 70.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[sub_resource type="Resource" id="Resource_iikqq"]
+script = ExtResource("5_rc7n0")
+stats = SubResource("Resource_livhu")
+equip_type = 1
+texture2D = ExtResource("7_tjfok")
+metadata/_custom_type_script = "uid://cacfp03wmcag2"
+
+[sub_resource type="Resource" id="Resource_lr1mf"]
+script = ExtResource("6_gpyvg")
+armor = 10.0
+fire_resist = 7.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[sub_resource type="Resource" id="Resource_ghq6f"]
+script = ExtResource("5_rc7n0")
+stats = SubResource("Resource_lr1mf")
+equip_type = 3
+texture2D = ExtResource("8_ovt1e")
+metadata/_custom_type_script = "uid://cacfp03wmcag2"
+
+[sub_resource type="Resource" id="Resource_63llp"]
+script = ExtResource("4_f0ik5")
+texture2D = ExtResource("9_hvulg")
+name = "test_item"
+description = "test_description"
+item_type = 2
+metadata/_custom_type_script = "uid://pydnvdk6d6mo"
+
+[node name="ork" unique_id=611007822 groups=["enemy"] instance=ExtResource("1_7jb55")]
+script = ExtResource("2_f2e6v")
+attack_frame = 4
+
+[node name="AnimatedSprite" parent="." index="0" unique_id=540831888]
+sprite_frames = SubResource("SpriteFrames_gpyvg")
+flip_h = true
+
+[node name="InventoryComponent" parent="." index="3" unique_id=1986143232]
+items = Array[ExtResource("4_f0ik5")]([SubResource("Resource_iikqq"), SubResource("Resource_ghq6f"), SubResource("Resource_63llp")])
+
+[node name="MovementComponent" parent="." index="5" unique_id=217457859]
+speed = 160.0
+arrival_tolerance = 20.0
+
+[node name="AIComponent" parent="." index="6" unique_id=1141383336]
+script = ExtResource("10_rc7n0")
+
+[node name="CombatComponent" parent="." index="7" unique_id=2067571379]
+position = Vector2(-15, -1)

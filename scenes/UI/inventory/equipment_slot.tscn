@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cdembxy5fxowt"]
+
+[ext_resource type="PackedScene" uid="uid://bvdciqcl6inek" path="res://scenes/UI/inventory/inventory_slot.tscn" id="1_kb8d1"]
+[ext_resource type="Script" uid="uid://dfv8ao62g3gvd" path="res://scenes/UI/inventory/EquipmentSlot.gd" id="2_srp6m"]
+
+[node name="EquipmentSlot" unique_id=783670769 instance=ExtResource("1_kb8d1")]
+script = ExtResource("2_srp6m")
+item_type = 0

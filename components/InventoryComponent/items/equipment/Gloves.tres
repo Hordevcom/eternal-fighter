@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EquipItem" format=3 uid="uid://dp23pwcoo3xhh"]
+
+[ext_resource type="Script" uid="uid://cacfp03wmcag2" path="res://components/InventoryComponent/items/equipment/equip_item.gd" id="1_c5vyv"]
+[ext_resource type="Texture2D" uid="uid://csj2670yg8yxo" path="res://Sprites/neuroshit/Neuro_2026-06-15_04-57-10.jpg" id="2_ocbb5"]
+
+[resource]
+script = ExtResource("1_c5vyv")
+equip_type = 3
+texture2D = ExtResource("2_ocbb5")
+name = "Strike gloves"
+metadata/_custom_type_script = "uid://cacfp03wmcag2"
