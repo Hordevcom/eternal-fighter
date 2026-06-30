@@ -6,6 +6,7 @@ class_name CombatComponent
 var target: Soldier
 
 signal ready_to_attack
+signal lost_target
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -17,12 +18,12 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body == target:
 		target = null
-		#make signal for play anim "run"
+		lost_target.emit()
 
 
 func make_damage_to_target():
 	if target and target.stats_comp.is_dead:
 		target = null
-		#make signal for play anim "run"
+		lost_target.emit()
 	elif target:
 		target.take_damage(damage, owner)

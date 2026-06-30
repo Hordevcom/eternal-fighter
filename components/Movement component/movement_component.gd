@@ -8,22 +8,25 @@ class_name MovementComponent
 var target: Node2D
 var reach_target: bool = false
 
-
 func move_to_target(new_target: Node2D) -> void:
 	if new_target == null:
+		print("new target is NULL!")
 		return
 	
 	target = new_target
 	reach_target = false
+	print("target: ", target.name)
 
 
 func move() -> void:
 	# Если цели нет или она уже достигнута, ничего не делаем
 	if reach_target or target == null:
+		print("target not found or reach target true!")
 		return
 
 	var body := owner as CharacterBody2D
 	if not body:
+		print("ITS NOT BODY!")
 		return # На всякий случай проверяем, что owner — это CharacterBody2D
 
 	# 1. Проверяем расстояние до цели
@@ -31,11 +34,12 @@ func move() -> void:
 
 	if distance <= arrival_tolerance:
 		reach_target = true
-		body.velocity = Vector2.ZERO # Останавливаем персонажа
+		target = null
 		body.move_and_slide()
 		return
 
 	# 2. Если не достигли, продолжаем движение
+	print(body.velocity)
 	var direction := body.global_position.direction_to(target.global_position)
 	body.velocity = direction * speed
 	body.move_and_slide()

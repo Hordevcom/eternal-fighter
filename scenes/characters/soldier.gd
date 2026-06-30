@@ -8,6 +8,7 @@ class_name Soldier
 @onready var movement_comp: MovementComponent = %MovementComponent
 @onready var anim_comp: AnimationComponent = %AnimationComponent
 @onready var combat_comp: CombatComponent = %CombatComponent
+@onready var dialog_comp: DialogComponent = %DialogComponent
 
 @onready var anim_sprite: AnimatedSprite2D = %AnimatedSprite
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 
 	equip_comp.equip_updated.connect(_on_equip_updated)
 	combat_comp.ready_to_attack.connect(_on_ready_to_attack)
+	combat_comp.lost_target.connect(_on_lost_target)
 	anim_sprite.frame_changed.connect(_on_frame_changed)
 	stats_comp.dead.connect(_on_death)
 
@@ -45,7 +47,7 @@ func _on_equip_updated():
 	recalculate_stats()
 
 func _physics_process(_delta: float) -> void:
-	if !movement_comp.reach_target:
+	if !movement_comp.reach_target and movement_comp.target:
 		movement_comp.move()
 
 func _on_ready_to_attack():
@@ -63,3 +65,6 @@ func take_damage(damage_amount: float, damage_maker: Soldier):
 
 func _on_death():
 	anim_comp.play_anim("death")
+
+func _on_lost_target():
+	anim_comp.play_anim("walk")

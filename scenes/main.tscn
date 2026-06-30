@@ -175,4 +175,8 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Отдельное окно"
 
+[node name="DeathZone" type="Node2D" parent="." unique_id=867128675]
+unique_name_in_owner = true
+position = Vector2(292, 312)
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

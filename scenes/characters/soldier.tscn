@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://bqfhxdwmwrcar" path="res://components/Movement component/movement_component.gd" id="16_ghq6f"]
 [ext_resource type="PackedScene" uid="uid://vp0pb6nksgi7" path="res://components/CombatComponent/combat_component.tscn" id="17_dv14i"]
 [ext_resource type="Script" uid="uid://de7lw750ok0dy" path="res://components/AnimationComponent/animation_component.gd" id="18_y7vqj"]
+[ext_resource type="PackedScene" uid="uid://c2b46f3s4al0r" path="res://components/dialog component/dialog_component.tscn" id="20_cgctt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dv14i"]
 atlas = ExtResource("2_ghq6f")
@@ -130,7 +131,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tln3o")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -244,7 +245,7 @@ attack_frame = 3
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=540831888]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_kv0so")
-animation = &"death"
+animation = &"walk"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1010002128]
@@ -286,3 +287,8 @@ position = Vector2(12, -1)
 unique_name_in_owner = true
 script = ExtResource("18_y7vqj")
 metadata/_custom_type_script = "uid://de7lw750ok0dy"
+
+[node name="DialogComponent" parent="." unique_id=185332446 instance=ExtResource("20_cgctt")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -20)

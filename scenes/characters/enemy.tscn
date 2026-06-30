@@ -123,9 +123,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d55bs")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [],
 "loop": 1,
@@ -201,6 +201,7 @@ attack_frame = 4
 
 [node name="AnimatedSprite" parent="." index="0" unique_id=540831888]
 sprite_frames = SubResource("SpriteFrames_gpyvg")
+animation = &"death"
 flip_h = true
 
 [node name="InventoryComponent" parent="." index="3" unique_id=1986143232]
