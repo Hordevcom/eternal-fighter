@@ -11,8 +11,11 @@ class_name Soldier
 @onready var dialog_comp: DialogComponent = %DialogComponent
 
 @onready var anim_sprite: AnimatedSprite2D = %AnimatedSprite
+@onready var collision: CollisionShape2D = %CollisionShape2D
 
 @export var attack_frame: int
+
+var death: bool = false
 
 func _ready() -> void:
 	GameState.save_player(self)
@@ -67,4 +70,5 @@ func _on_death():
 	anim_comp.play_anim("death")
 
 func _on_lost_target():
-	anim_comp.play_anim("walk")
+	if !death:
+		anim_comp.play_anim("walk")

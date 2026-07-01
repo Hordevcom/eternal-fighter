@@ -125,7 +125,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"death",
-"speed": 7.0
+"speed": 12.0
 }, {
 "frames": [],
 "loop": 1,
@@ -208,7 +208,7 @@ flip_h = true
 items = Array[ExtResource("4_f0ik5")]([SubResource("Resource_iikqq"), SubResource("Resource_ghq6f"), SubResource("Resource_63llp")])
 
 [node name="MovementComponent" parent="." index="5" unique_id=217457859]
-speed = 160.0
+speed = 100.0
 arrival_tolerance = 20.0
 
 [node name="AIComponent" parent="." index="6" unique_id=1141383336]

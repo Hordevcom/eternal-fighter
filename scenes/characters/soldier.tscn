@@ -249,6 +249,7 @@ animation = &"walk"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1010002128]
+unique_name_in_owner = true
 position = Vector2(-0.5, -4)
 shape = SubResource("RectangleShape2D_se1ou")
 

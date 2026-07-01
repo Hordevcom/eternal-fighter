@@ -39,7 +39,6 @@ func move() -> void:
 		return
 
 	# 2. Если не достигли, продолжаем движение
-	print(body.velocity)
 	var direction := body.global_position.direction_to(target.global_position)
 	body.velocity = direction * speed
 	body.move_and_slide()
