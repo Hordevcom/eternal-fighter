@@ -3,7 +3,7 @@ class_name CombatComponent
 
 @export var damage: float = 50.0
 
-var target: Soldier
+var target: UnitBase
 
 signal ready_to_attack
 signal lost_target

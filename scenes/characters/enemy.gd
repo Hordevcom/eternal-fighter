@@ -1,4 +1,4 @@
-extends Soldier
+extends UnitBase
 class_name Ork
 
 func _on_death():

@@ -19,7 +19,7 @@ func recalculate_stats():
 	current_stats.add_packet(GameState.player_character.equip_comp.calculate_equip_stats())
 
 
-func take_damage(damage: float, damage_dealer: Soldier):
+func take_damage(damage: float, damage_dealer: UnitBase):
 	current_stats.health -= damage
 	print("take damage from ", damage_dealer.name, ", current health: ", current_stats.health)
 
