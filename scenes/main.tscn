@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://5tj73yrl2y5"]
 
-[ext_resource type="PackedScene" uid="uid://b6ewwo55l752h" path="res://scenes/characters/soldier.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bas1r73npygqc" path="res://scenes/main.gd" id="1_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bdugsngwn2251" path="res://Sprites/tilemaps/tilemap_packed.png" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://1w2d5xqvbylk" path="res://scenes/characters/enemy.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cylb3shsgkisf" path="res://scenes/characters/player character/player_character.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bx130ud6k6dbn" path="res://scenes/characters/enemy character/enemy_character.tscn" id="4_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbgi4"]
 texture = ExtResource("3_jyhfs")
@@ -142,12 +142,6 @@ script = ExtResource("1_sugp2")
 tile1 = NodePath("Tile1")
 tile2 = NodePath("Tile2")
 
-[node name="soldier" parent="." unique_id=611007822 instance=ExtResource("1_o5qli")]
-position = Vector2(455, 313)
-
-[node name="ork" parent="." unique_id=2030429324 instance=ExtResource("4_jyhfs")]
-position = Vector2(607, 312)
-
 [node name="Tile1" type="Node2D" parent="." unique_id=29240871]
 unique_name_in_owner = true
 position = Vector2(1030, 319)
@@ -178,5 +172,11 @@ text = "Отдельное окно"
 [node name="DeathZone" type="Node2D" parent="." unique_id=867128675]
 unique_name_in_owner = true
 position = Vector2(292, 312)
+
+[node name="PlayerCharacter" parent="." unique_id=1499566737 instance=ExtResource("3_tbgi4")]
+position = Vector2(451, 313)
+
+[node name="CharacterBody2D" parent="." unique_id=1371867023 instance=ExtResource("4_tefeu")]
+position = Vector2(581, 312)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://b4c8ed3g3jqfv"]
+
+[ext_resource type="Script" uid="uid://dktwaxxpj3uu2" path="res://scenes/characters/base character/unitBase.gd" id="1_p211c"]
+[ext_resource type="Script" uid="uid://4dn63756lnul" path="res://components/StatsComponent/stats_component.gd" id="5_ximff"]
+[ext_resource type="Script" uid="uid://c74f3p37nc0nm" path="res://scripts/StatsStruct.gd" id="6_240p8"]
+[ext_resource type="Script" uid="uid://bk1p7s72kcbs1" path="res://components/InventoryComponent/inventory_component.gd" id="7_wnxik"]
+[ext_resource type="Script" uid="uid://pydnvdk6d6mo" path="res://components/InventoryComponent/items/item.gd" id="8_aw164"]
+[ext_resource type="Script" uid="uid://cacfp03wmcag2" path="res://components/InventoryComponent/items/equipment/equip_item.gd" id="9_ku18o"]
+[ext_resource type="Texture2D" uid="uid://vrlwvcw3bn4m" path="res://Sprites/neuroshit/Gemini_Generated_Image_qv8msvqv8msvqv8m.png" id="10_sekjv"]
+[ext_resource type="Texture2D" uid="uid://dx0iev11six45" path="res://Sprites/neuroshit/Neuro_2026-06-15_04-58-29.jpg" id="11_d0tfo"]
+[ext_resource type="Texture2D" uid="uid://fcn1047maujy" path="res://Sprites/neuroshit/Neuro_2026-06-15_04-57-09.jpg" id="12_mnyhm"]
+[ext_resource type="Texture2D" uid="uid://csj2670yg8yxo" path="res://Sprites/neuroshit/Neuro_2026-06-15_04-57-10.jpg" id="13_mn0jh"]
+[ext_resource type="Texture2D" uid="uid://dc1uyft8jvdhn" path="res://Sprites/icon.png" id="14_rt43u"]
+[ext_resource type="Script" uid="uid://t4mxiwtfo3o1" path="res://components/EquipmentComponent/equipment_component.gd" id="15_2ebi3"]
+[ext_resource type="Script" uid="uid://bqfhxdwmwrcar" path="res://components/Movement component/movement_component.gd" id="16_vtors"]
+[ext_resource type="Script" uid="uid://bb6agspv2ccsl" path="res://components/AI component/ai_player_component.gd" id="17_i6lhs"]
+[ext_resource type="PackedScene" uid="uid://vp0pb6nksgi7" path="res://components/CombatComponent/combat_component.tscn" id="18_psxun"]
+[ext_resource type="Script" uid="uid://de7lw750ok0dy" path="res://components/AnimationComponent/animation_component.gd" id="19_wkio3"]
+[ext_resource type="PackedScene" uid="uid://c2b46f3s4al0r" path="res://components/dialog component/dialog_component.tscn" id="20_m5je0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3xmk"]
+size = Vector2(13, 18)
+
+[sub_resource type="Resource" id="Resource_pyd6u"]
+script = ExtResource("6_240p8")
+health = 100.0
+armor = 40.0
+fire_resist = 26.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[sub_resource type="Resource" id="Resource_y7vqj"]
+script = ExtResource("6_240p8")
+armor = 45.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[sub_resource type="Resource" id="Resource_13a7e"]
+script = ExtResource("9_ku18o")
+stats = SubResource("Resource_y7vqj")
+texture2D = ExtResource("10_sekjv")
+name = "Helmet of gods"
+description = "it's just a helmet broou"
+metadata/_custom_type_script = "uid://cacfp03wmcag2"
+
+[sub_resource type="Resource" id="Resource_cgctt"]
+script = ExtResource("6_240p8")
+armor = 7.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[sub_resource type="Resource" id="Resource_r35bd"]
+script = ExtResource("9_ku18o")
+stats = SubResource("Resource_cgctt")
+equip_type = 2
+texture2D = ExtResource("11_d0tfo")
+metadata/_custom_type_script = "uid://cacfp03wmcag2"
+
+[sub_resource type="Resource" id="Resource_livhu"]
+script = ExtResource("6_240p8")
+armor = 70.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[sub_resource type="Resource" id="Resource_iikqq"]
+script = ExtResource("9_ku18o")
+stats = SubResource("Resource_livhu")
+equip_type = 1
+texture2D = ExtResource("12_mnyhm")
+metadata/_custom_type_script = "uid://cacfp03wmcag2"
+
+[sub_resource type="Resource" id="Resource_lr1mf"]
+script = ExtResource("6_240p8")
+armor = 10.0
+fire_resist = 7.0
+metadata/_custom_type_script = "uid://c74f3p37nc0nm"
+
+[sub_resource type="Resource" id="Resource_ghq6f"]
+script = ExtResource("9_ku18o")
+stats = SubResource("Resource_lr1mf")
+equip_type = 3
+texture2D = ExtResource("13_mn0jh")
+metadata/_custom_type_script = "uid://cacfp03wmcag2"
+
+[sub_resource type="Resource" id="Resource_63llp"]
+script = ExtResource("8_aw164")
+texture2D = ExtResource("14_rt43u")
+name = "test_item"
+description = "test_description"
+item_type = 2
+metadata/_custom_type_script = "uid://pydnvdk6d6mo"
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1499566737]
+script = ExtResource("1_p211c")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=323830370]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1483059420]
+unique_name_in_owner = true
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_m3xmk")
+
+[node name="StatsComponent" type="Node" parent="." unique_id=476765190]
+unique_name_in_owner = true
+script = ExtResource("5_ximff")
+base_stats = SubResource("Resource_pyd6u")
+metadata/_custom_type_script = "uid://4dn63756lnul"
+
+[node name="InventoryComponent" type="Node" parent="." unique_id=249385549]
+unique_name_in_owner = true
+script = ExtResource("7_wnxik")
+items = Array[ExtResource("8_aw164")]([SubResource("Resource_13a7e"), SubResource("Resource_r35bd"), SubResource("Resource_iikqq"), SubResource("Resource_ghq6f"), SubResource("Resource_63llp")])
+metadata/_custom_type_script = "uid://bk1p7s72kcbs1"
+
+[node name="EquipmentComponent" type="Node" parent="." unique_id=898654685]
+unique_name_in_owner = true
+script = ExtResource("15_2ebi3")
+metadata/_custom_type_script = "uid://t4mxiwtfo3o1"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1420251514]
+unique_name_in_owner = true
+script = ExtResource("16_vtors")
+metadata/_custom_type_script = "uid://bqfhxdwmwrcar"
+
+[node name="AIComponent" type="Node" parent="." unique_id=875271259]
+unique_name_in_owner = true
+script = ExtResource("17_i6lhs")
+metadata/_custom_type_script = "uid://dxj5xaugv46m4"
+
+[node name="CombatComponent" parent="." unique_id=1672390014 instance=ExtResource("18_psxun")]
+unique_name_in_owner = true
+position = Vector2(12, -1)
+
+[node name="AnimationComponent" type="Node" parent="." unique_id=587558382]
+unique_name_in_owner = true
+script = ExtResource("19_wkio3")
+metadata/_custom_type_script = "uid://de7lw750ok0dy"
+
+[node name="DialogComponent" parent="." unique_id=185332446 instance=ExtResource("20_m5je0")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -20)
